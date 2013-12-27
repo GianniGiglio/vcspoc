@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ClassDiagram>
+    <Class name="be.test.vcs.CachedServiceImpl" x="128" y="500">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="be.test.vcs.CacheService"/>
+        <Association destinationClassName="be.test.vcs.CacheDao"
+            endpointName="cacheDao" kind="Simple"/>
+    </Class>
     <Class name="be.test.vcs.VcsValidationRules" x="549" y="646">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
@@ -8,6 +20,15 @@
             private-accepted="false" protected-accepted="false"
             default-accepted="true" static-accepted="false"
             accessors-accepted="true" constructors-accepted="false"/>
+    </Class>
+    <Class name="be.test.vcs.CvsUrlChecker" x="224" y="638">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
     </Class>
     <Class name="be.test.vcs.Validator" x="439" y="51">
         <AttributesDisplayFilter public-accepted="true"
@@ -37,19 +58,7 @@
         <Communication destinationClassName="be.test.vcs.CvsValidator"/>
         <Communication destinationClassName="be.test.vcs.VcsService"/>
     </Class>
-    <Class name="be.test.vcs.CvsServiceImpl" x="218" y="354">
-        <AttributesDisplayFilter public-accepted="true"
-            private-accepted="true" protected-accepted="true"
-            default-accepted="true" static-accepted="false"/>
-        <MethodDisplayFilter public-accepted="true"
-            private-accepted="false" protected-accepted="false"
-            default-accepted="true" static-accepted="false"
-            accessors-accepted="true" constructors-accepted="false"/>
-        <Extension destinationClassName="be.test.vcs.VcsService"/>
-        <Association destinationClassName="be.test.vcs.CacheDao"
-            endpointName="cacheDao" kind="Simple"/>
-    </Class>
-    <Class name="be.test.vcs.CacheDaoImpl" x="146" y="583">
+    <Class name="be.test.vcs.CacheDaoImpl" x="16" y="529">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -59,7 +68,7 @@
             accessors-accepted="true" constructors-accepted="true"/>
         <Extension destinationClassName="be.test.vcs.CacheDao"/>
     </Class>
-    <Class name="be.test.vcs.CacheDao" x="157" y="485">
+    <Class name="be.test.vcs.CacheDao" x="30" y="439">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -78,7 +87,16 @@
             accessors-accepted="true" constructors-accepted="false"/>
         <Extension destinationClassName="be.test.vcs.VcsValidationRules"/>
     </Class>
-    <Class name="VcsServiceImpl" x="-39" y="342">
+    <Class name="be.test.vcs.CacheService" x="261" y="420">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="VcsServiceImpl" x="72" y="317">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -99,6 +117,21 @@
             default-accepted="true" static-accepted="false"
             accessors-accepted="true" constructors-accepted="false"/>
         <Extension destinationClassName="be.test.vcs.VcsValidationRules"/>
+    </Class>
+    <Class name="be.test.vcs.CvsMessageListner" x="245" y="550">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="true" static-accepted="false"
+            accessors-accepted="true" constructors-accepted="false"/>
+        <Association destinationClassName="be.test.vcs.CvsUrlChecker"
+            endpointName="cvsUrlChecker" kind="Simple"/>
+        <Association destinationClassName="be.test.vcs.CacheService"
+            endpointName="cacheService" kind="Simple"/>
+        <Communication destinationClassName="be.test.vcs.CvsUrlChecker"/>
+        <Communication destinationClassName="be.test.vcs.CvsValidator"/>
     </Class>
     <Class name="be.test.vcs.VcsService" x="68" y="206">
         <AttributesDisplayFilter public-accepted="true"
